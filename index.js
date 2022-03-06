@@ -1,4 +1,5 @@
-let volume = (new URLSearchParams(window.location.search)).get('v');
+let page = (new URLSearchParams(window.location.search)).get('p');
+if (page == null) page = 'main';
 
 function addScript(script) {
 	let pageScript = document.createElement('script');
@@ -7,5 +8,5 @@ function addScript(script) {
 	document.body.append(pageScript);
 }
 
-addScript(`./${volume}/data.js`);
-addScript('./constructor.js');
+addScript(`./pages/${page}.js`);
+addScript('./pages/constructor.js');

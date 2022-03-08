@@ -153,3 +153,26 @@ a {
 .gallery-panel img {
     height: 100%;
 }
+
+ul, ol {
+    margin: 0;
+}
+
+#navigator {
+    background-color: #868686;
+    width: 90%;
+    height: 34px;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    border: #666666 2px solid;
+    border-radius: 2px;
+    display: flex;
+}
+
+#navigator * {
+    flex: 0 0 30px;
+}
+
+#navigator-mid {
+    flex: 1 0 0;
+}

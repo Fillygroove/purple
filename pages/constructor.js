@@ -23,6 +23,16 @@ function addSection(section) {
     main.append(sectionDiv);
 }
 
+function addList(list) {
+    let unorderedList = document.createElement('ul');
+    for (let i = 0; i < list.length; i++) {
+        let listElement = document.createElement('li');
+        listElement.innerHTML = list[i];
+        unorderedList.append(listElement);
+    }
+    main.append(unorderedList, document.createElement('br'));
+}
+
 if (data.topbar != undefined) {
     for (let i = 0; i < data.topbar.length; i++) {
         let topbarDiv = document.createElement('div');
@@ -40,7 +50,8 @@ if (data.name != undefined) {
     let nameP = document.createElement('p');
     nameP.id = 'gallery-title';
     nameP.innerHTML = data.name;
-    main.append(nameP);
+    let nameHR = document.createElement('hr');
+    main.append(nameP, nameHR);
 }
 
 if (data.main != undefined) {
@@ -114,4 +125,24 @@ if (data.pics != undefined) {
     
     volumePage.innerHTML = `1 / ${data.pics}`;
     volumePanels[0].style.display = 'block';
+}
+
+if (data.nav != undefined) {
+    /*
+    <div style="">
+  <p style="">Prev</p>
+  <p style="flex: 1 0 0;"></p><p style="flex: 0 0 30px;">Next</p>
+</div>
+*/
+    let navigator = document.createElement('div');
+    navigator.id = 'navigator';
+    let prev = document.createElement('p');
+    let mid = document.createElement('p');
+    let next = document.createElement('p');
+    mid.id = 'navigator-mid';
+    prev.innerHTML = data.nav.prev;
+    next.innerHTML = data.nav.next;
+
+    navigator.append(prev, mid, next);
+    main.append(navigator);
 }

@@ -170,7 +170,7 @@ ul, ol {
 }
 
 #navigator * {
-    flex: 0 0 30px;
+    flex: 0 0 auto;
 }
 
 #navigator-mid {

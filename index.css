@@ -18,6 +18,10 @@ html {
     margin: 8px;
 }
 
+.section p {
+    padding-left: 2%;
+}
+
 #main {
     background-color: #0003;
     border-radius: 0 0 5px 5px;
@@ -68,7 +72,7 @@ p {
 
 a {
     text-decoration: none;
-    color: #8efffa;
+    color: #99F; /*#8efffa*/
 }
 
 #main div p {
@@ -175,4 +179,8 @@ ul, ol {
 
 #navigator-mid {
     flex: 1 0 0;
+}
+
+.new {
+    color: #F99;
 }
